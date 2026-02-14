@@ -1,7 +1,7 @@
-# ShikshaSetu - Mobile-Optimized Attendance System
+# SMAD ACADEMY - Mobile-Optimized Attendance System
 
 ## Overview
-ShikshaSetu is now a dual-platform application that works seamlessly on both web and mobile devices. The web version remains fully functional and deployable on Netlify, while the mobile version provides native Android capabilities with enhanced camera integration.
+SMAD ACADEMY is now a dual-platform application that works seamlessly on both web and mobile devices. The web version remains fully functional and deployable on Netlify, while the mobile version provides native Android capabilities with enhanced camera integration.
 
 ## Features
 - ✅ All original web functionality preserved
@@ -44,7 +44,7 @@ npx cap open android  # Opens Android Studio
 - `src/utils/mobile.ts` - Mobile detection and utilities
 
 ### Configuration Files
-- `capacitor.config.ts` - Capacitor configuration
+- `capacitor.config.ts` - Capacitor configuration (appId: com.smadacademy.attendance)
 - `src/styles/mobile.css` - Mobile-specific styling
 
 ### Updated Files

@@ -1,8 +1,8 @@
 import { CapacitorConfig } from '@capacitor/cli';
 
 const config: CapacitorConfig = {
-  appId: 'com.shikshasetu.attendance',
-  appName: 'ShikshaSetu',
+  appId: 'com.smadacademy.attendance',
+  appName: 'SMAD ACADEMY',
   webDir: 'dist',
 
   server: {

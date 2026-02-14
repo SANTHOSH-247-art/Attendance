@@ -46,7 +46,7 @@ export default function MobileLayout({ children }: MobileLayoutProps) {
             <div className="bg-green-500 rounded-lg p-2 mr-3">
               <UserCheck className="h-6 w-6 text-white" />
             </div>
-            <h1 className="text-xl font-bold text-gray-800">ShikshaSetu</h1>
+            <h1 className="text-xl font-bold text-gray-800">SMAD ACADEMY</h1>
           </div>
           
           <motion.button
@@ -119,7 +119,7 @@ export default function MobileLayout({ children }: MobileLayoutProps) {
                     <UserCheck className="h-8 w-8 text-white" />
                   </div>
                   <div>
-                    <h2 className="text-xl font-bold text-gray-800">ShikshaSetu</h2>
+                    <h2 className="text-xl font-bold text-gray-800">SMAD ACADEMY</h2>
                     <p className="text-sm text-gray-600">Attendance System</p>
                   </div>
                 </div>

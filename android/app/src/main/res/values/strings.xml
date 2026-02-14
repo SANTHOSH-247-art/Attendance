@@ -1,7 +1,7 @@
 <?xml version='1.0' encoding='utf-8'?>
 <resources>
-    <string name="app_name">ShikshaSetu</string>
-    <string name="title_activity_main">ShikshaSetu</string>
-    <string name="package_name">com.shikshasetu.attendance</string>
-    <string name="custom_url_scheme">com.shikshasetu.attendance</string>
+    <string name="app_name">SMAD ACADEMY</string>
+    <string name="title_activity_main">SMAD ACADEMY</string>
+    <string name="package_name">com.smadacademy.attendance</string>
+    <string name="custom_url_scheme">com.smadacademy.attendance</string>
 </resources>
