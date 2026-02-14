@@ -7,7 +7,6 @@
     "node": "20.x"
   },
   "scripts": {
-    "prebuild": "npm install --prefer-offline --no-audit --no-fund",
     "dev": "vite",
     "build": "tsc -b && vite build",
     "lint": "eslint .",
