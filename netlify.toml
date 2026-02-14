@@ -1,0 +1,6 @@
+[build]
+command = "npm install --prefer-offline --no-audit --no-fund && npm run build"
+
+[build.environment]
+NODE_VERSION = "20"
+NPM_FLAGS = "--prefer-offline --no-audit --no-fund"
