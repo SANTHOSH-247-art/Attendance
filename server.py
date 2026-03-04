@@ -7,6 +7,9 @@ app = Flask(__name__)
 CORS(app)  # Enable CORS for all routes
 
 # Configuration
+from dotenv import load_dotenv
+load_dotenv()  # Load environment variables from .env file
+
 # Load credentials from environment variables
 TWILIO_ACCOUNT_SID = os.environ.get('TWILIO_ACCOUNT_SID')
 TWILIO_AUTH_TOKEN = os.environ.get('TWILIO_AUTH_TOKEN')
