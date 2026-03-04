@@ -1,73 +1,87 @@
-# React + TypeScript + Vite
+# SMAS (Smart Attendance Management System)
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A full-stack application for managing attendance using facial recognition and automated SMS notifications.
 
-Currently, two official plugins are available:
+## 🚀 Features
+- **Facial Recognition**: Automatically marks attendance by recognizing students' faces using their webcam via `face-api.js`.
+- **Manual Attendance**: Options to manually mark presence if facial recognition fails.
+- **SMS Notifications**: Parents receive instantaneous text messages regarding their child's attendance via the Twilio API.
+- **Dashboard & Analytics**: Real-time charts and data visualization of attendance records.
+- **Interactive Map**: Visualize data/locations using Leaflet maps.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## 🛠️ Technology Stack
+### Frontend
+- **React.js 19** with **TypeScript** and **Vite**
+- **Tailwind CSS** for styling, with `framer-motion` for animations
+- **face-api.js** for browser-based facial recognition
+- **chart.js** & **react-chartjs-2** for analytics
 
-## React Compiler
+### Backend
+- **Python 3** with **Flask**
+- **Twilio SDK** for handling SMS notifications
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+## 📋 Prerequisites
+To run this application, you must have the following installed on your machine:
+- [Node.js](https://nodejs.org/) (Version 20.x or higher)
+- [Python 3](https://www.python.org/downloads/)
+- A [Twilio](https://www.twilio.com/) Account (for SMS routing)
 
-## Expanding the ESLint configuration
+## ⚙️ Installation & Setup
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+1. **Clone the repository** (if you haven't already):
+   ```bash
+   git clone <repository-url>
+   cd Attendance
+   ```
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+2. **Frontend Setup (Node.js)**
+   Install the necessary React packages:
+   ```bash
+   npm install
+   ```
 
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
+3. **Backend Setup (Python)**
+   Create a virtual environment, activate it, and install references from `requirements.txt`:
+   ```bash
+   python -m venv venv
+   
+   # On Windows:
+   .\venv\Scripts\activate
+   # On Mac/Linux:
+   source venv/bin/activate
+   
+   pip install -r requirements.txt
+   ```
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+4. **Environment Configuration**
+   This project relies on Twilio for sending text messages. 
+   - Rename `.env.example` to `.env` (or configure your system environment variables directly).
+   - Enter your actual Twilio Account SID, Auth Token, and Twilio phone number.
+
+## 🏃‍♂️ Running the Application
+
+### The Easy Way (Windows Only)
+Simply double-click the `start_app.bat` file in the root directory. This script will automatically launch both the Python backend and the Vite frontend in separate terminal windows.
+
+### Manual Startup (Any OS)
+If you prefer to start them manually or are on Mac/Linux:
+
+**1. Start the Python Backend**
+Ensure your virtual environment is activated, then run:
+```bash
+python server.py
 ```
+*The server will start on `http://127.0.0.1:5000`*
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
-
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
-
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+**2. Start the React Frontend**
+Open a new terminal, navigate to the project directory, and run:
+```bash
+npm run dev
 ```
+*The application should now be accessible at `http://localhost:5173`*
+
+## 📁 Repository Structure
+- `/src`: Contains the React frontend logic, components, contexts, and UI.
+- `/public/models`: Pre-trained neural network models used by `face-api.js`.
+- `server.py`: The Python Flask application handling business logic and the Twilio SMS integration.
+- `start_app.bat`: A quick-start script for Windows users.

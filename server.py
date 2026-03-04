@@ -7,11 +7,10 @@ app = Flask(__name__)
 CORS(app)  # Enable CORS for all routes
 
 # Configuration
-# Ideally these should be in environment variables, but for "simple code" 
-# requested by user, we will keep them here.
-TWILIO_ACCOUNT_SID = os.environ.get('TWILIO_ACCOUNT_SID', 'AC202656791cd32409d49c91b69ac208c0')
-TWILIO_AUTH_TOKEN = os.environ.get('TWILIO_AUTH_TOKEN', '2d72bba1ecdf27fe4005d246a386733c')
-TWILIO_FROM_NUMBER = os.environ.get('TWILIO_FROM_NUMBER', '+14067327347')
+# Load credentials from environment variables
+TWILIO_ACCOUNT_SID = os.environ.get('TWILIO_ACCOUNT_SID')
+TWILIO_AUTH_TOKEN = os.environ.get('TWILIO_AUTH_TOKEN')
+TWILIO_FROM_NUMBER = os.environ.get('TWILIO_FROM_NUMBER')
 
 client = Client(TWILIO_ACCOUNT_SID, TWILIO_AUTH_TOKEN)
 
